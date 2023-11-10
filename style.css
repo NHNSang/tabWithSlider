@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,112,1) 35%, rgba(0,237,255,1) 100%);
+}
+
+.container{
+    max-width: 600px;
+    width: 100%;
+    background-color: #fff;
+    padding: 30px 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.container nav{
+    position: relative;
+    height: 50px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container nav::after{ 
+    content: '';
+    background: silver;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    top: 47px;
+    filter: blur(0.5px);
+}
+
+.container nav label{
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3 ease;
+}
+
+#home:checked ~ nav label .home,
+#home:checked ~ nav label .blog,
+#home:checked ~ nav label .code,
+#home:checked ~ nav label .help,
+#home:checked ~ nav label .about{
+    color: #6f55ca;
+}
+
+input[type='radio']{
+    display: none;
+}
+
+/* Tạo màu và di chuyển slider */
+.container nav .slider{
+    position: absolute;
+    height: 4.5px;
+    background-color: #6f55CA;
+    border-radius: 20px;
+    width: 20%;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    transition: all 0.3s ease;
+    filter: blur(0.4px);
+}
+
+#blog:checked ~ nav .slider{
+    left: 20%;
+}
+
+#code:checked ~ nav .slider{
+    left: 40%;
+}
+
+#help:checked ~ nav .slider{   
+    left: 60%;
+}
+
+#about:checked ~ nav .slider{
+    left: 80%;
+}
+
+/* Tạo màu vi click vào từng id */
+#home:checked ~ nav .home{
+    color: #6f55CA;
+}
+
+#blog:checked ~ nav .blog{
+    color: #6f55CA;
+}
+
+#code:checked ~ nav .code{
+    color: #6f55CA;
+}
+
+#help:checked ~ nav .help{
+    color: #6f55CA;
+}
+
+#about:checked ~ nav .about{
+    color: #6f55CA;
+}
